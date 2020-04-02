@@ -4,7 +4,7 @@ module.exports={
             env:'development',
             publicPath:'/',
             host:'localhost',
-            port:'8090',
+            port:'8080',
             assetsSubDirectory: 'static',
             devtoolType: 'cheap-module-eval-source-map',
             proxyTable:{

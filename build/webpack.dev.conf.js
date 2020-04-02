@@ -1,7 +1,8 @@
 'use strict'
-const path=require('paht');
+const path=require('path');
 const webpack=require('webpack');
 const isAdmin=process.env_NODE_ENV_TYPE==="admin";
+console.log(isAdmin,88)
 const devConf=isAdmin?require('../config').admin.dev:require('../config').client.dev; //开发环境配置参数
 const baseConf =require('./webpack.base.conf');
 
@@ -51,6 +52,7 @@ const dev=merge(baseConf,{
         quiet:true// 终端输出的只有初始启动信息。 webpack 的警告和错误是不输出到终端的
 
     },
+    
     plugins:[
         // 启用热更新
         new webpack.HotModuleReplacementPlugin(),
@@ -59,7 +61,7 @@ const dev=merge(baseConf,{
         // 配置文件入口
         new HtmlWebpackPlugin({
             filename:'index.html',
-            template:(isAdmin?'code/admin/index.html':'code/client/index.html'),
+            template:(isAdmin?'../code/admin/index.html':'../code/client/index.html'),
             inject:true,
         }),
         // 编译插件
